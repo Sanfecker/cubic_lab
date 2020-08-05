@@ -38,7 +38,7 @@ class _ScreenOneState extends State<ScreenOne> {
     List<Widget> _widgetOptions = <Widget>[
       Column(
         children: <Widget>[
-          Flexible(
+          Expanded(
               flex: 10,
               child: Container(
                 width: double.infinity,
@@ -194,13 +194,12 @@ class _ScreenOneState extends State<ScreenOne> {
                 ),
               )
           ),
-          Flexible(
+          Expanded(
             child: Container(
               padding: EdgeInsets.all(24.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+              child: ListView(
                 children: <Widget>[
-                  Spacer(),
+                  SizedBox(height: 10,),
                   ListTile(
                     leading: Icon(Icons.wb_sunny, size: 32, color: Colors.lightBlue,),
                     title: Text('Before Breakfast', style: TextStyle(
@@ -208,7 +207,7 @@ class _ScreenOneState extends State<ScreenOne> {
                     ),),
                     trailing: Icon(Icons.add_box, size: 32, color: Colors.blue,),
                   ),
-                  Spacer(),
+                  SizedBox(height: 10,),
                   Container(
                     padding: EdgeInsets.all(8),
                     decoration: BoxDecoration(
@@ -234,7 +233,7 @@ class _ScreenOneState extends State<ScreenOne> {
                       ),),
                     ),
                   ),
-                  Spacer(),
+                  SizedBox(height: 10,),
                   ListTile(
                     leading: Image.asset('images/Group 31951.png'),
                     title: Text('After Breakfast', style: TextStyle(
@@ -242,7 +241,7 @@ class _ScreenOneState extends State<ScreenOne> {
                     ),),
                     trailing: Icon(Icons.add_box, size: 32, color: Colors.blue,),
                   ),
-                  Spacer(),
+                  SizedBox(height: 10,),
                   Container(
                     padding: EdgeInsets.all(8),
                     decoration: BoxDecoration(
@@ -268,7 +267,7 @@ class _ScreenOneState extends State<ScreenOne> {
                       ),),
                     ),
                   ),
-                  Spacer(),
+                  SizedBox(height: 10,),
                   Container(
                     padding: EdgeInsets.all(8),
                     decoration: BoxDecoration(
@@ -294,15 +293,21 @@ class _ScreenOneState extends State<ScreenOne> {
                       ),),
                     ),
                   ),
-                  Spacer(),
-                  InkWell(
-                    onTap: _onItemTapped,
-                      child: Icon(Icons.add_box, size: 48, color: Colors.lightBlue,)),
-                  Text('Add Medication', style: TextStyle(
-                      color: Colors.lightBlue,
-                      fontSize: 24
-                  ),),
-                  Spacer()
+                  SizedBox(height: 10,),
+                  Align(
+                    alignment: Alignment.center,
+                    child: InkWell(
+                      onTap: _onItemTapped,
+                        child: Icon(Icons.add_box, size: 48, color: Colors.lightBlue,)),
+                  ),
+                  Align(
+                    alignment: Alignment.center,
+                    child: Text('Add Medication', style: TextStyle(
+                        color: Colors.lightBlue,
+                        fontSize: 24
+                    ),),
+                  ),
+                  SizedBox(height: 10,)
                 ],
               ),
             ),
